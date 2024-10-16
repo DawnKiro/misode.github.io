@@ -18,6 +18,7 @@ export default defineConfig({
 			{ find: 'react-dom', replacement: 'preact/compat' },
 			{ find: 'react/jsx-runtime', replacement: 'preact/jsx-runtime' },
 		],
+		preserveSymlinks: true,
 	},
 	build: {
 		sourcemap: true,
