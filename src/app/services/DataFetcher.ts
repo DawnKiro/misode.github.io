@@ -59,6 +59,10 @@ export async function fetchData(versionId: string, collectionTarget: CollectionR
 		_fetchRegistries(version, collectionTarget),
 		_fetchBlockStateMap(version, blockStateTarget),
 	])
+
+	if (version.id == "1.21" || version.id == "1.21.2") {
+		collectionTarget.registry["worldgen/density_function_type"] = collectionTarget.registry["worldgen/density_function_type"].concat(["more-dfs:ceil"])
+	}
 }
 
 async function _fetchRegistries(version: Version, target: CollectionRegistry) {
